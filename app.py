@@ -15,9 +15,11 @@ data_cat = ['Mild diabetes',
  'Severe diabetes']
 img_width = 180
 img_height = 180
-image = st.text_input ("Enter image name (Please avoid using backslash!)", r"C:\diabetic wound\training_set\Not a diabetic wound\IMG_7221.JPG")
+image = st.file_uploader("Upload a wound image", type=["jpg", "jpeg", "png"])
 
-image_load = tf.keras.utils.load_img(image, target_size=(img_height,img_width))
+if image is not None:
+    image_load = tf.keras.utils.load_img(image, target_size=(img_height,img_width))
+
 img_arr = tf.keras.utils.array_to_img(image_load)
 img_bat = tf.expand_dims(img_arr,0)
 
