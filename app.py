@@ -8,7 +8,7 @@ import numpy as np
 import streamlit as st
 
 st.header('Wound classification')
-model = load_model('C:\diabetic wound\Wound_classify.keras')
+model = load_model('Wound_classify.keras')
 data_cat = ['Mild diabetes',
  'Moderate diabetes',
  'Not a diabetic wound',
