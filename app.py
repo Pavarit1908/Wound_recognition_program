@@ -23,17 +23,19 @@ if image is not None:
     img_bat = tf.expand_dims(img_arr,0)
     predict = model.predict(img_bat)
 
-score = tf.nn.softmax(predict)
-st.image(image)
-st.write('Wound in image is {} with an accuracy of 95%'.format(data_cat[np.argmax(score)],np.max(score)*100))
+    score = tf.nn.softmax(predict)
+    st.image(image)
+    st.write('Wound in image is {} with an accuracy of 95%'.format(data_cat[np.argmax(score)],np.max(score)*100))
 
-predicted_label = data_cat[np.argmax(score)]
-if predicted_label == str('Mild diabetes'):
-    st.write('Go get your blood checked immediately')
-elif predicted_label == str('Moderate diabetes'):
-    st.write('Go to a hospital when available')
-elif predicted_label == str('Not a diabetic wound'):
-    st.write("Cover it up with alchohol and don't let water get to it")
-else:
-    st.write("Go to a hospital as soon as possible")
+    predicted_label = data_cat[np.argmax(score)]
+    if predicted_label == str('Mild diabetes'):
+        st.write('Go get your blood checked immediately')
+    elif predicted_label == str('Moderate diabetes'):
+        st.write('Go to a hospital when available')
+    elif predicted_label == str('Not a diabetic wound'):
+        st.write("Cover it up with alchohol and don't let water get to it")
+    else:
+        st.write("Go to a hospital as soon as possible")
+
+
 
