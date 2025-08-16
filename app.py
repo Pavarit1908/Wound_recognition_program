@@ -21,9 +21,7 @@ if image is not None:
     image_load = tf.keras.utils.load_img(image, target_size=(img_height,img_width))
     img_arr = tf.keras.utils.img_to_array(image_load)
     img_bat = tf.expand_dims(img_arr,0)
-
-predict = model.predict(img_bat)
-
+    predict = model.predict(img_bat)
 
 score = tf.nn.softmax(predict)
 st.image(image)
