@@ -20,7 +20,7 @@ image = st.file_uploader("Upload a wound image", type=["jpg", "jpeg", "png"])
 if image is not None:
     image_load = tf.keras.utils.load_img(image, target_size=(img_height,img_width))
 
-img_arr = tf.keras.utils.array_to_img(image_load)
+img_arr = tf.keras.utils.array_to_img(image)
 img_bat = tf.expand_dims(img_arr,0)
 
 predict = model.predict(img_bat)
