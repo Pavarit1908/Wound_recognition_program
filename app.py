@@ -19,11 +19,11 @@ image = st.file_uploader("Upload a wound image", type=["jpg", "jpeg", "png"])
 
 if image is not None:
     image_load = tf.keras.utils.load_img(image, target_size=(img_height,img_width))
-
-img_arr = tf.keras.utils.array_to_img(image)
-img_bat = tf.expand_dims(img_arr,0)
+    img_arr = tf.keras.utils.img_to_array(image_load)
+    img_bat = tf.expand_dims(img_arr,0)
 
 predict = model.predict(img_bat)
+
 
 score = tf.nn.softmax(predict)
 st.image(image)
@@ -38,3 +38,4 @@ elif predicted_label == str('Not a diabetic wound'):
     st.write("Cover it up with alchohol and don't let water get to it")
 else:
     st.write("Go to a hospital as soon as possible")
+
