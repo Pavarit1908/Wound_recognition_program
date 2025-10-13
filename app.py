@@ -25,7 +25,7 @@ if image is not None:
 
     score = tf.nn.softmax(predict)
     st.image(image)
-    st.write('Wound in image is {} with an accuracy of 95%'.format(data_cat[np.argmax(score)],np.max(score)*100))
+    st.write('Wound in image is {} with an accuracy of {:0.2f}'.format(data_cat[np.argmax(score)],np.max(score)*100))
 
     predicted_label = data_cat[np.argmax(score)]
     if predicted_label == str('Mild diabetes'):
