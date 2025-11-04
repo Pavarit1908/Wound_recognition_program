@@ -29,13 +29,27 @@ if image is not None:
 
     predicted_label = data_cat[np.argmax(score)]
     if predicted_label == str('Mild diabetes'):
-        st.write('Go get your blood checked immediately')
+        st.write('Recommendations:')
+        st.write('/tClean the wound starile saline and cover it with a sterile pad.')
+        st.write('/tReduce pressure or wheight-bearing on the affected foot.')
+        st.write('/tConsult a doctor if possible.')
+        st.write('Things to check daily.')
+        st.write('/tIt becomes red, swollen or more painful.')
     elif predicted_label == str('Moderate diabetes'):
-        st.write('Go to a hospital when available')
+        st.write('Recommendations:')
+        st.write('/tVisit the hospital for wound care.')
+        st.write('/tDO NOT treat the wound yourself.')
+        st.write('/tClosely monitor blood sugar levels.')
+        st.write('Things to check daily.')
+        st.write('/tIt is darkening, swelling or abnormal changes.')
     elif predicted_label == str('Not a diabetic wound'):
+        st.write('Do not worry. You do not have diabetes.')
         st.write("Cover it up with alchohol and don't let water get to it")
     else:
-        st.write("Go to a hospital as soon as possible")
+        st.write('Recommendations:')
+        st.write('/tSeek immediate hospital treatment.')
+        st.write('/tMaintain strict wound hegiene.')
+        st.write('/tMoniter the wound daily under medical supervision AT ALL TIMES.')
 
 
 
