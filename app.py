@@ -37,7 +37,7 @@ if image is not None:
         """)
         st.markdown("""
         **Things to check daily:**
-        - It becomes red, swollen or more painful.
+        - Red, swollen or more painful.
         """)            
     elif predicted_label == str('Moderate diabetes'):
         st.markdown("""
@@ -48,7 +48,7 @@ if image is not None:
         """)
         st.markdown("""
         **Things to check daily:**
-        - It is darkening, swelling or abnormal changes.
+        - Darkening, swelling or abnormal changes.
         """)
     elif predicted_label == str('Not a diabetic wound'):
         st.write('Do not worry. You do not have diabetes.')
